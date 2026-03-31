@@ -92,7 +92,7 @@
             const errorMsg = document.getElementById('errorMsg');
 
             if(passwordInput === correctPassword) {
-                window.location.href = "추억.html"; // 이동할 페이지
+                window.location.href = "index.html"; // 이동할 페이지
             } else {
                 errorMsg.style.display = "block";
             }

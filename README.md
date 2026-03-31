@@ -3,19 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>song</title>
+    <title>비밀번호 확인</title>
+    <style>
+        /* 모바일 화면을 기본으로 잡음 */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-container {
+            width: 90%;
+            max-width: 400px;
+            padding: 30px 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .login-container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* 모바일 작은 화면용 글자 조정 */
+        @media (max-width: 360px) {
+            .login-container h2 {
+                font-size: 20px;
+            }
+
+            input[type="password"], button {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>1-3 최애 노래목록</h1>
-    <a href="https://www.youtube.com/watch?v=WBQ0rwR8rNk" target="_blank" title="사랑이 잘(아이유&오혁)">사랑이 잘(아이유&오혁)</a>
-    <br><a href="https://www.youtube.com/watch?v=u50N-rxQKEM" target="_blank" title="애상(이무진)">애상(이무진)</a>
-    <br><a href="https://www.youtube.com/watch?v=iD54IrEyiK8" target="_blank" title="흰수염고래(윤도현)">흰수염고래(윤도현)</a>
-    <br><a href="https://www.youtube.com/watch?v=zeI1RXSK1YY" target="_blank" title="너를 생각해(주시크)">너를 생각해(주시크)</a>
-    <br><a href="https://www.youtube.com/watch?v=iEHOGeKXxtg" target="_blank" title="걘 아니야(지코)">걘 아니야(지코)</a>"
-    <br><a href="https://www.youtube.com/watch?v=SgpHV-G_aJk" target="_blank" title="meteor(창모)">meteor(창모)</a>
-    <br><a href="https://www.youtube.com/watch?v=zT-Ne6mCRHY" target="_blank" title="ohayo my night(디핵&파테코)">ohayo my night(디핵&파테코)</a>
-    <br><a href="https://www.youtube.com/watch?v=NRXEuiqSuNM" target="_blank" title="빈집(기리보이)">빈집(기리보이)</a>
-    <br><a href="https://www.youtube.com/watch?v=LMyH5WT7JEM" target="_blank" title="오래된 노래(스텐딩에그)">오래된 노래(스텐딩에그)</a>
-    <br><a href="https://www.youtube.com/watch?v=M8xyrfIYqvs" target="_blank" title="what about(Blaxian)">what about(Blaxian)</a>
+    <div class="login-container">
+        <h2>비밀번호 입력</h2>
+        <input type="password" id="password" placeholder="비밀번호 입력">
+        <br>
+        <button onclick="checkPassword()">확인</button>
+        <div class="error" id="errorMsg">비밀번호가 틀렸습니다.</div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const passwordInput = document.getElementById('password').value;
+            const correctPassword = "0209"; // 변경된 비밀번호
+            const errorMsg = document.getElementById('errorMsg');
+
+            if(passwordInput === correctPassword) {
+                window.location.href = "추억.html"; // 이동할 페이지
+            } else {
+                errorMsg.style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>

@@ -3,100 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>비밀번호 확인</title>
+    <title>2-9추억.com</title>
     <style>
-        /* 모바일 화면을 기본으로 잡음 */
+        /* 전체 body 스타일 */
         body {
+            font-family: 'Arial', sans-serif;
             margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
         }
 
-        .login-container {
-            width: 90%;
-            max-width: 400px;
-            padding: 30px 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        /* 글씨 크기와 중앙 정렬 */
+        h1 {
+            font-size: 2em;
             text-align: center;
-        }
-
-        .login-container h2 {
-            font-size: 24px;
             margin-bottom: 20px;
         }
 
-        input[type="password"] {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-            box-sizing: border-box;
+        p {
+            font-size: 1em;
+            margin: 10px 0;
         }
 
-        button {
-            width: 100%;
-            padding: 12px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007BFF;
-            color: white;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        .error {
-            color: red;
-            margin-top: 10px;
-            display: none;
-        }
-
-        /* 모바일 작은 화면용 글자 조정 */
-        @media (max-width: 360px) {
-            .login-container h2 {
-                font-size: 20px;
+        /* 모바일 화면에 맞춘 반응형 조정 */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
             }
 
-            input[type="password"], button {
-                font-size: 14px;
-                padding: 10px;
+            h1 {
+                font-size: 1.5em;
+            }
+
+            p {
+                font-size: 0.9em;
             }
         }
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <h2>비밀번호 입력</h2>
-        <input type="password" id="password" placeholder="비밀번호 입력">
-        <br>
-        <button onclick="checkPassword()">확인</button>
-        <div class="error" id="errorMsg">비밀번호가 틀렸습니다.</div>
+    <div class="content">
+        <h1>2-9추억</h1>
+        <p><br>(3월 3일) 첫 만남</p>
+        <p><br>(3월 ??일) 2-9 첫 커플의 탄생</p>
+        <p>(3월 31일) 비빔밥 먹다가 혼남</p>
     </div>
-
-    <script>
-        function checkPassword() {
-            const passwordInput = document.getElementById('password').value;
-            const correctPassword = "0209"; // 변경된 비밀번호
-            const errorMsg = document.getElementById('errorMsg');
-
-            if(passwordInput === correctPassword) {
-                window.location.href = "index.html"; // 이동할 페이지
-            } else {
-                errorMsg.style.display = "block";
-            }
-        }
-    </script>
 </body>
 </html>
